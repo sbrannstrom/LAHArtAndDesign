@@ -1,0 +1,176 @@
+{
+  "paintings": [
+    {
+      "title": "Stark #1 (Serie)",
+      "content": "Olja 80x120",
+      "path": "./assets/paintings/stark01.jpeg",
+      "sold": true,
+      "price": 8000
+    },
+    {
+      "title": "Stark #2 (Serie)",
+      "content": "Olja 80x120",
+      "path": "./assets/paintings/stark02.jpeg",
+      "sold": true,
+      "price": 8000
+    },
+    {
+      "title": "Stark #3 (Serie)",
+      "content": "Olja 80x120",
+      "path": "./assets/paintings/stark03.jpeg",
+      "sold": true,
+      "price": 8000
+    },
+    {
+      "title": "Den gula ryggsäcken #1 (Serie)",
+      "content": "Olja 40x40",
+      "path": "./assets/paintings/dengularyggsacken01.jpeg",
+      "sold": false,
+      "price": 8000
+    },
+    {
+      "title": "Den gula ryggsäcken #2 (Serie)",
+      "content": "Olja 40x40",
+      "path": "./assets/paintings/dengularyggsacken02.jpeg",
+      "sold": false,
+      "price": 8000
+    },
+    {
+      "title": "Den gula ryggsäcken #3 (Serie)",
+      "content": "Olja 40x40",
+      "path": "./assets/paintings/dengularyggsacken03.jpeg",
+      "sold": false,
+      "price": 8000
+    },
+    {
+      "title": "Den gula ryggsäcken #4 (Serie)",
+      "content": "Olja 40x40",
+      "path": "./assets/paintings/dengularyggsacken04.jpeg",
+      "sold": false,
+      "price": 8000
+    },
+    {
+      "title": "Den gula ryggsäcken #5 (Serie)",
+      "content": "Olja 40x40",
+      "path": "./assets/paintings/dengularyggsacken05.jpeg",
+      "sold": false,
+      "price": 8000
+    },
+    {
+      "title": "Folkhemmet",
+      "content": "Olja 40x50",
+      "path": "./assets/paintings/folkhemmet.jpeg",
+      "sold": false,
+      "price": 3000
+    },
+    {
+      "title": "Solitär",
+      "content": "Olja 80x120",
+      "path": "./assets/paintings/solitar.jpeg",
+      "price": 6000
+    },
+    {
+      "title": "Aqua",
+      "content": "Olja 50x70",
+      "path": "./assets/paintings/aqua.jpeg",
+      "sold": false,
+      "price": 4000
+    },
+    {
+      "title": "Andetag",
+      "content": "Olja 120x80",
+      "path": "./assets/paintings/andetag.jpeg",
+      "sold": false,
+      "price": 6000
+    },
+    {
+      "title": "På andra sidan",
+      "content": "Olja 60x90",
+      "path": "./assets/paintings/paandrasidan.jpeg",
+      "sold": false,
+      "price": 5000
+    },
+    {
+      "title": "Band",
+      "content": "Olja 50x60",
+      "path": "./assets/paintings/band.jpeg",
+      "sold": false,
+      "price": 4000
+    },
+    {
+      "title": "Solsken",
+      "content": "Olja 80x120",
+      "path": "./assets/paintings/solsken.jpeg",
+      "sold": false,
+      "price": 6000
+    },
+    {
+      "title": "Tyst",
+      "content": "Olja 50x70",
+      "path": "./assets/paintings/tyst.jpeg",
+      "sold": false,
+      "price": 5000
+    }
+  ],
+  "tovningar": [
+    {
+      "title": "Lorem Ipsum",
+      "content": "In tincidunt dolor sed erat consectetur gravida.",
+      "path": "./assets/tovningar/00.png",
+      "sold": true,
+      "price": 5000
+    },
+    {
+      "title": "Lorem Ipsum",
+      "content": "In tincidunt dolor sed erat consectetur gravida.",
+      "path": "./assets/tovningar/01.png",
+      "sold": false,
+      "price": 5000
+    },
+    {
+      "title": "Lorem Ipsum",
+      "content": "In tincidunt dolor sed erat consectetur gravida.",
+      "path": "./assets/tovningar/02.png",
+      "sold": true,
+      "price": 5000
+    },
+    {
+      "title": "Lorem Ipsum",
+      "content": "In tincidunt dolor sed erat consectetur gravida.",
+      "path": "./assets/tovningar/03.png",
+      "sold": true,
+      "price": 5000
+    },
+    {
+      "title": "Lorem Ipsum",
+      "content": "In tincidunt dolor sed erat consectetur gravida.",
+      "path": "./assets/tovningar/04.png",
+      "sold": false,
+      "price": 5000
+    },
+    {
+      "title": "Lorem Ipsum",
+      "content": "In tincidunt dolor sed erat consectetur gravida.",
+      "path": "./assets/tovningar/05.png",
+      "sold": false,
+      "price": 5000
+    },
+    {
+      "title": "Lorem Ipsum",
+      "content": "In tincidunt dolor sed erat consectetur gravida.",
+      "path": "./assets/tovningar/06.png",
+      "sold": false,
+      "price": 5000
+    },
+    {
+      "title": "Lorem Ipsum",
+      "content": "In tincidunt dolor sed erat consectetur gravida.",
+      "path": "./assets/tovningar/07.png",
+      "sold": false,
+      "price": 5000
+    }
+  ],
+  "blandat": [
+
+  ]
+}

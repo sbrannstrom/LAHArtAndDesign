@@ -1,0 +1,11 @@
+<div>
+  <app-header title="Blandad Konst"
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt dolor sed erat consectetur gravida. Aliquam quis tempus lacus. Cras et magna tellus.">
+  </app-header>
+  <app-grid [grid]="blandat"></app-grid>
+  <div *ngIf="!blandat.length">
+    <div class="w-full flex justify-center">
+      <span class="italic">Innehåll kommer snart.</span>
+    </div>
+  </div>
+</div>

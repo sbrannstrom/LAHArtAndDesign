@@ -1,0 +1,303 @@
+<div class="relative z-10" role="dialog" aria-modal="true">
+  <!-- <div class="fixed inset-0"></div> -->
+  <div>
+    <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
+    <div class="relative z-40 md:hidden" role="dialog" aria-modal="true" [ngClass]="menuVisible ? 'block' : 'hidden'"
+      (click)="menuVisible = false">
+      <!--
+      Off-canvas menu backdrop, show/hide based on off-canvas menu state.
+
+      Entering: "transition-opacity ease-linear duration-300"
+        From: "opacity-0"
+        To: "opacity-100"
+      Leaving: "transition-opacity ease-linear duration-300"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+      <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+
+      <div class="fixed inset-0 flex z-40 transition ease-in-out duration-300 transform"
+        [ngClass]="menuVisible ? 'translate-x-0' : '-translate-x-full'">
+        <!--
+        Off-canvas menu, show/hide based on off-canvas menu state.
+
+        Entering: "transition ease-in-out duration-300 transform"
+          From: "-translate-x-full"
+          To: "translate-x-0"
+        Leaving: "transition ease-in-out duration-300 transform"
+          From: "translate-x-0"
+          To: "-translate-x-full"
+      -->
+        <div
+          class="relative flex-1 flex flex-col max-w-xs w-full bg-gray-800 transition ease-in-out duration-300 transform"
+          [ngClass]="menuVisible ? 'translate-x-0' : '-translate-x-full'">
+          <!--
+          Close button, show/hide based on off-canvas menu state.
+
+          Entering: "ease-in-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in-out duration-300"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+          <div class="absolute top-0 right-0 -mr-12 pt-2">
+            <button type="button" (click)="menuVisible = false"
+              class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+              <span class="sr-only">Close sidebar</span>
+              <!-- Heroicon name: outline/x -->
+              <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="flex-shrink-0 flex items-center justify-center py-4 bg-pink-100">
+            <img class="h-28 w-auto" src="./assets/logo-transp-small.png">
+          </div>
+          <div class="mt-5 flex-1 h-0 overflow-y-auto">
+            <nav class="px-2 space-y-1" (click)="menuVisible = false">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a routerLink="/hem"
+                class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-300 hover:bg-gray-700 hover:text-white"
+                routerLinkActive="bg-gray-900 text-white">
+                <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
+                <svg class="mr-3 flex-shrink-0 h-6 w-6" routerLinkActive="text-pink-200"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Hem
+              </a>
+
+              <a routerLink="/tovningar"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                routerLinkActive="bg-gray-900 text-white">
+                <svg class="text-gray-400 mr-3 flex-shrink-0 h-6 w-6 stroke-gray-400"
+                  routerLinkActive="text-pink-200 stroke-pink-200" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 14L12 22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <circle cx="12" cy="8" r="6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  </circle>
+                </svg>
+                Nåltovningar
+              </a>
+
+              <a routerLink="/oljemalningar"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                routerLinkActive="bg-gray-900 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6"
+                  routerLinkActive="text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+                Oljemålningar
+              </a>
+
+              <a routerLink="blandat"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                routerLinkActive="bg-gray-900 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6"
+                  routerLinkActive="text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                Blandat
+              </a>
+
+              <a (click)="clickProfile()"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6"
+                  routerLinkActive="text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                </svg>
+                Kontakta Mig
+              </a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="flex-shrink-0 w-14" aria-hidden="true">
+          <!-- Dummy element to force sidebar to shrink to fit close icon -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Static sidebar for desktop -->
+    <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
+      <!-- Sidebar component, swap this element with another sidebar if you like -->
+      <div class="flex-1 flex flex-col justify-between min-h-0 bg-gray-800">
+        <div>
+
+
+          <div class="flex justify-center items-center h-36 flex-shrink-0 p-4 bg-pink-100">
+            <img class="h-36 w-auto" src="./assets/logo-transp-small.png">
+          </div>
+          <div class="flex-1 flex flex-col overflow-y-auto">
+            <nav class="flex-1 px-2 py-4 space-y-1">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a routerLink="/hem"
+                class="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-300 hover:bg-gray-700 hover:text-white"
+                routerLinkActive="bg-gray-900 text-white">
+                <!-- Current: "text-gray-300", Default: "text-gray-400 group-hover:text-gray-300" -->
+                <svg class="mr-3 flex-shrink-0 h-6 w-6" routerLinkActive="text-pink-200"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                Hem
+              </a>
+
+              <a routerLink="/tovningar"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md stroke-gray-300"
+                routerLinkActive="bg-gray-900 text-white">
+                <svg class="text-gray-400 mr-3 flex-shrink-0 h-6 w-6"
+                  routerLinkActive="text-pink-200 stroke-pink-200" viewBox="0 0 24 24" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 14L12 22" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <circle cx="12" cy="8" r="6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  </circle>
+                </svg>
+                Nåltovningar
+              </a>
+
+              <a routerLink="/oljemalningar"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                routerLinkActive="bg-gray-900 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6"
+                  routerLinkActive="text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+                Oljemålningar
+              </a>
+
+              <a routerLink="blandat"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                routerLinkActive="bg-gray-900 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6"
+                  routerLinkActive="text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                </svg>
+                Blandat
+              </a>
+
+              <a (click)="clickProfile()"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6"
+                  routerLinkActive="text-pink-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                </svg>
+                Kontakta Mig
+              </a>
+            </nav>
+          </div>
+        </div>
+        <!-- <div class="">
+          <span class="text-gray-700 text-xs tracking-tighter">
+            &copy; 2022 created by <a href="https://simonb.codes" target="_blank" class="cursor-pointer">Simon B</a>
+          </span>
+        </div> -->
+      </div>
+    </div>
+    <div class="md:pl-64 flex flex-col">
+      <div class="sticky top-0 z-10 flex-shrink-0 flex h-16 bg-white shadow">
+        <button type="button" (click)="menuVisible = true"
+          class="px-4 text-gray-500 hover:bg-pink-200 focus:outline-none focus:ring-0 md:hidden">
+          <span class="sr-only">Open sidebar</span>
+          <!-- Heroicon name: outline/menu-alt-2 -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7" />
+          </svg>
+        </button>
+        <div class="flex-1 px-4 flex justify-between">
+          <div class="flex-1 flex">
+            <nav class="flex" aria-label="Breadcrumb">
+              <ol role="list" class="flex items-center space-x-4">
+                <li>
+                  <div>
+                    <a routerLink="/hem" class="text-pink-200 hover:text-pink-300">
+                      <!-- Heroicon name: solid/home -->
+                      <svg class="flex-shrink-0 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                        fill="currentColor" aria-hidden="true">
+                        <path
+                          d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                      </svg>
+                      <span class="sr-only">Home</span>
+                    </a>
+                  </div>
+                </li>
+
+                <li *ngIf="route !== 'hem'">
+                  <div class="flex items-center">
+                    <!-- Heroicon name: solid/chevron-right -->
+                    <svg class="flex-shrink-0 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd" />
+                    </svg>
+                    <span class="ml-4 text-sm font-medium text-pink-200">
+                      {{ routeText }}
+                    </span>
+                  </div>
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <div class="ml-4 flex items-center md:ml-6">
+            <!-- Profile dropdown -->
+            <div class="ml-3 relative">
+              <div>
+                <button type="button" (click)="clickProfile()"
+                  class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-0"
+                  id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="sr-only">Open user menu</span>
+                  <div class="h-8 w-8 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                      class="h-8 w-8 stroke-slate-700 hover:stroke-pink-200 focus:stroke-pink-200" viewBox="0 0 24 24"
+                      stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <rect x="3" y="4" width="18" height="16" rx="3" />
+                      <circle cx="9" cy="10" r="2" />
+                      <line x1="15" y1="8" x2="17" y2="8" />
+                      <line x1="15" y1="12" x2="17" y2="12" />
+                      <line x1="7" y1="16" x2="17" y2="16" />
+                    </svg>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="flex-1">
+        <div class="py-6">
+          <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+          <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+        </div> -->
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 bg-white">
+            <!-- Replace with your content -->
+            <app-profilemenu [(showBackdrop)]="showBackdrop" [(visible)]="visible"></app-profilemenu>
+            <router-outlet></router-outlet>
+            <!-- /End replace -->
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>

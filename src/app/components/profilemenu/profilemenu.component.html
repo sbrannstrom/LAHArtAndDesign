@@ -1,0 +1,97 @@
+<div class="relative z-10" role="dialog" aria-modal="true" [ngClass]="showBackdrop ? 'block' : 'hidden'">
+  <div class="fixed inset-0 overflow-hidden">
+    <div id="outside" class="absolute inset-0 overflow-hidden" (click)="clickOutside($event)">
+      <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-md pl-10 sm:pl-16">
+        <!--
+        Slide-over panel, show/hide based on slide-over state.
+
+        Entering: "transform transition ease-in-out duration-500 sm:duration-700"
+          From: "translate-x-full"
+          To: "translate-x-0"
+        Leaving: "transform transition ease-in-out duration-500 sm:duration-700"
+          From: "translate-x-0"
+          To: "translate-x-full"
+      -->
+        <div class="pointer-events-auto w-screen max-w-md transform transition ease-in-out duration-500 sm:duration-700"
+          [ngClass]="visible ? 'translate-x-0' : 'translate-x-full'">
+          <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+            <div class="px-4 py-6 sm:px-6">
+              <div class="flex items-start justify-between">
+                <h2 id="slide-over-heading" class="text-lg font-medium text-gray-900">Om mig</h2>
+                <div class="ml-3 flex h-7 items-center">
+                  <button (click)="close()" type="button"
+                    class="rounded-md bg-white text-gray-400 hover:text-gray-500 focus:ring-2 focus:ring-pink-300">
+                    <span class="sr-only">Close panel</span>
+                    <!-- Heroicon name: outline/x -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke-width="2" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Main -->
+            <div>
+              <div class="pb-1 sm:pb-6">
+                <div>
+                  <div class="relative h-56">
+                    <img class="absolute h-full w-full object-cover object-top"
+                      src="./assets/lotta.jpeg"
+                      alt="">
+                  </div>
+                  <div class="mt-6 px-4 sm:mt-8 sm:flex sm:items-end sm:px-6">
+                    <div class="sm:flex-1">
+                      <div>
+                        <div class="flex items-center">
+                          <h3 class="text-xl font-bold text-gray-900 sm:text-2xl underline decoration-pink-200 decoration-4 underline-offset-2">Lotta Andersson Högberg</h3>
+                          <!-- <span class="ml-2.5 inline-block h-2 w-2 flex-shrink-0 rounded-full bg-green-400">
+                            <span class="sr-only">Online</span>
+                          </span> -->
+                        </div>
+                        <a href="https://www.instagram.com/lahartanddesign/" target="_blank"
+                          class="text-sm text-gray-500">@lahartanddesign</a>
+                      </div>
+                      <a href="mailto:lotta@lahartanddesign.se" target="_blank" class="mt-5 flex flex-wrap space-y-3 sm:space-y-0 sm:space-x-3">
+                        <button type="button"
+                          class="inline-flex w-full flex-shrink-0 items-center justify-center rounded-md border border-transparent bg-pink-100 px-4 py-2 text-sm font-medium text-slate-700 shadow-md hover:bg-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-offset-2 sm:flex-1">
+                          Skicka Mail
+                          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </button>
+                        <!-- <button type="button"
+                          class="inline-flex w-full flex-1 items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Ring Mig</button> -->
+                        </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="px-4 pt-5 pb-5 sm:px-0 sm:pt-0">
+                <dl class="space-y-8 px-4 sm:space-y-6 sm:px-6">
+                  <div>
+                    <dt class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">Om</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
+                      <p>Enim feugiat ut ipsum, neque ut. Tristique mi id elementum praesent. Gravida in tempus feugiat
+                        netus enim aliquet a, quam scelerisque. Dictumst in convallis nec in bibendum aenean arcu.</p>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">Plats</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">Luleå, Sverige</dd>
+                  </div>
+                  <div>
+                    <dt class="text-sm font-medium text-gray-500 sm:w-40 sm:flex-shrink-0">Mailadress</dt>
+                    <dd class="mt-1 text-sm text-gray-900 sm:col-span-2">
+                      <a href="mailto:lotta@lahartanddesign.se">lotta@lahartanddesign.se</a>
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
